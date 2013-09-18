@@ -9,4 +9,7 @@ import std.c.linux.linux;
 
 extern (C):
 
+deprecated("Use core.sys.posix.pthread instead"):
+
 public import core.sys.posix.pthread;
+

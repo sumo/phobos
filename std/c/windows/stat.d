@@ -5,10 +5,9 @@
 module std.c.windows.stat;
 version (Windows):
 
-extern (C):
+public import core.sys.windows.stat;
 
-// linux version is in std.c.linux.linux
-
+<<<<<<< Updated upstream
 const S_IFMT   = 0xF000;
 const S_IFDIR  = 0x4000;
 const S_IFCHR  = 0x2000;
@@ -45,3 +44,13 @@ struct struct_stat
 int  stat(char *, struct_stat *);
 int  fstat(int, struct_stat *);
 int  _wstat(wchar *, struct_stat *);
+=======
+version (Windows)
+{
+	deprecated("Use core.sys.windows.stat instead"):
+}
+else
+{
+    static assert(0);           // Windows only
+}
+>>>>>>> Stashed changes
